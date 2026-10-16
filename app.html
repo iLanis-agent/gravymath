@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gravy Math - app</title>
+<style>
+  :root { --accent:#7a4b1e; --ink:#2a2015; --paper:#faf6ee; --soft:#f2e9d8; }
+  * { box-sizing:border-box; margin:0; }
+  body { font-family:Georgia, 'Times New Roman', serif; background:var(--paper); color:var(--ink); line-height:1.55; padding:2rem 1.2rem; }
+  main { max-width:660px; margin:0 auto; }
+  h1 { font-size:1.8rem; color:var(--accent); }
+  .boundary { background:#fdeaea; border-left:6px solid #b03030; color:#5c1c1c; border-radius:6px; padding:1rem 1.1rem; margin:1rem 0 1.4rem; }
+  .boundary strong { display:block; margin-bottom:.3rem; }
+  .panel { background:var(--soft); border-left:5px solid var(--accent); border-radius:6px; padding:1rem 1.1rem; margin-bottom:1.1rem; }
+  h2 { font-size:1.1rem; margin-bottom:.6rem; }
+  label { display:block; font-size:.9rem; margin:.45rem 0 .1rem; }
+  input, select { width:100%; padding:.45rem .55rem; font-size:1rem; border:1px solid #cbb694; border-radius:6px; background:#fff; color:var(--ink); }
+  .out { margin-top:.7rem; font-size:.98rem; background:#fff; border:1px dashed #cbb694; border-radius:6px; padding:.6rem .7rem; min-height:2.4rem; }
+  .out.err { border-color:#b03030; color:#8a1f1f; font-style:normal; }
+  footer { margin-top:1.8rem; font-size:.85rem; color:#6e6152; }
+  a { color:var(--accent); }
+</style>
+</head>
+<body>
+<main>
+  <h1>Gravy Math</h1>
+  <div class="boundary">
+    <strong>Boundary: illustrative arithmetic only</strong>
+    The ratios and doses here are labeled norms, not measurements of your pan, your stock or your guests. Taste as you go, trust your own spoon over anything this page says, and cook the flour long enough.
+  </div>
+
+  <div class="panel">
+    <h2>The roux truth</h2>
+    <label for="r-fat">Tablespoons of fat or drippings</label>
+    <input id="r-fat" type="number" min="0" step="1" value="2">
+    <div class="out" id="r-out"></div>
+  </div>
+
+  <div class="panel">
+    <h2>The crowd truth</h2>
+    <label for="c-guests">Guests at the table</label>
+    <input id="c-guests" type="number" min="0" step="1" value="8">
+    <div class="out" id="c-out"></div>
+  </div>
+
+  <div class="panel">
+    <h2>The fix truth</h2>
+    <label for="f-cups">Cups of gravy in the pan</label>
+    <input id="f-cups" type="number" min="0" step="0.5" value="4">
+    <label for="f-mode">The problem</label>
+    <select id="f-mode">
+      <option value="thin" selected>Too thin</option>
+      <option value="thick">Too thick</option>
+    </select>
+    <div class="out" id="f-out"></div>
+  </div>
+
+  <footer>Gravy Math keeps arithmetic on labeled norms only. <a href="index.html">Why it exists</a>.</footer>
+</main>
+<script src="engine.js"></script>
+<script>
+  const num = (id) => Number(document.getElementById(id).value);
+  function show(out, fn) {
+    try {
+      const text = fn();
+      out.textContent = text;
+      out.classList.remove("err");
+    } catch (e) {
+      out.textContent = e.message;
+      out.classList.add("err");
+    }
+  }
+  const rOut = document.getElementById("r-out");
+  const cOut = document.getElementById("c-out");
+  const fOut = document.getElementById("f-out");
+  function recalc() {
+    show(rOut, () => rouxTruth(num("r-fat")));
+    show(cOut, () => crowdTruth(num("c-guests")));
+    show(fOut, () => fixTruth(num("f-cups"), document.getElementById("f-mode").value));
+  }
+  document.querySelectorAll("input, select").forEach((el) => {
+    el.addEventListener("input", recalc);
+    el.addEventListener("change", recalc);
+  });
+  recalc();
+</script>
+</body>
+</html>
