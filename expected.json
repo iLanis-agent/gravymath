@@ -1,0 +1,194 @@
+[
+ {
+  "fn": "rouxTruth",
+  "args": [
+   2
+  ],
+  "out": "2 tablespoons of fat ask 2 tablespoons of flour and thicken 2 cups of liquid honestly."
+ },
+ {
+  "fn": "rouxTruth",
+  "args": [
+   1
+  ],
+  "out": "1 tablespoon of fat asks 1 tablespoon of flour and thickens 1 cup of liquid honestly."
+ },
+ {
+  "fn": "rouxTruth",
+  "args": [
+   4
+  ],
+  "out": "4 tablespoons of fat ask 4 tablespoons of flour and thicken 4 cups of liquid honestly."
+ },
+ {
+  "fn": "rouxTruth",
+  "args": [
+   6
+  ],
+  "out": "6 tablespoons of fat ask 6 tablespoons of flour and thicken 6 cups of liquid honestly."
+ },
+ {
+  "fn": "rouxTruth",
+  "args": [
+   0
+  ],
+  "err": "the fat must be above zero"
+ },
+ {
+  "fn": "rouxTruth",
+  "args": [
+   -1
+  ],
+  "err": "the fat must be above zero"
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   8
+  ],
+  "out": "8 guests at an honest third of a cup each ask 2.7 cups of gravy - 2.7 tablespoons of fat and flour honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   1
+  ],
+  "out": "1 guest at an honest third of a cup each asks 0.3 cups of gravy - 0.3 tablespoons of fat and flour honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   3
+  ],
+  "out": "3 guests at an honest third of a cup each ask 1.0 cups of gravy - 1.0 tablespoon of fat and flour honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   12
+  ],
+  "out": "12 guests at an honest third of a cup each ask 4.0 cups of gravy - 4.0 tablespoons of fat and flour honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   5
+  ],
+  "out": "5 guests at an honest third of a cup each ask 1.7 cups of gravy - 1.7 tablespoons of fat and flour honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   2
+  ],
+  "out": "2 guests at an honest third of a cup each ask 0.7 cups of gravy - 0.7 tablespoons of fat and flour honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   0
+  ],
+  "err": "the guests must be above zero"
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   -4
+  ],
+  "err": "the guests must be above zero"
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   4,
+   "thin"
+  ],
+  "out": "4.0 cups of thin gravy ask 4.0 teaspoons of cornstarch whisked into cold water honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   1,
+   "thin"
+  ],
+  "out": "1.0 cup of thin gravy asks 1.0 teaspoon of cornstarch whisked into cold water honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   2.5,
+   "thin"
+  ],
+  "out": "2.5 cups of thin gravy ask 2.5 teaspoons of cornstarch whisked into cold water honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   4,
+   "thick"
+  ],
+  "out": "4.0 cups of thick gravy loosen with 8.0 tablespoons of warm broth honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   1,
+   "thick"
+  ],
+  "out": "1.0 cup of thick gravy loosens with 2.0 tablespoons of warm broth honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   0.5,
+   "thick"
+  ],
+  "out": "0.5 cups of thick gravy loosen with 1.0 tablespoon of warm broth honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   3,
+   "lumpy"
+  ],
+  "err": "the fix must be thin or thick"
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   6,
+   "thin"
+  ],
+  "out": "6.0 cups of thin gravy ask 6.0 teaspoons of cornstarch whisked into cold water honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   2,
+   "thick"
+  ],
+  "out": "2.0 cups of thick gravy loosen with 4.0 tablespoons of warm broth honestly."
+ },
+ {
+  "fn": "rouxTruth",
+  "args": [
+   3
+  ],
+  "out": "3 tablespoons of fat ask 3 tablespoons of flour and thicken 3 cups of liquid honestly."
+ },
+ {
+  "fn": "crowdTruth",
+  "args": [
+   6
+  ],
+  "out": "6 guests at an honest third of a cup each ask 2.0 cups of gravy - 2.0 tablespoons of fat and flour honestly."
+ },
+ {
+  "fn": "fixTruth",
+  "args": [
+   0,
+   "thin"
+  ],
+  "err": "the cups must be above zero"
+ }
+]
